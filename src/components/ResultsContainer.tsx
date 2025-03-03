@@ -164,7 +164,7 @@ const ResultsContainer: React.FC<ResultsContainerProps> = ({
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.5 }}
             >
-              <motion.button
+              {/* <motion.button
                 className="bg-primary text-white px-6 py-2 rounded-full flex items-center justify-center"
                 onClick={onLoadMore}
                 whileHover={{ scale: 1.05 }}
@@ -198,7 +198,7 @@ const ResultsContainer: React.FC<ResultsContainerProps> = ({
                 ) : (
                   "Load more"
                 )}
-              </motion.button>
+              </motion.button> */}
             </motion.div>
           )}
         </>
