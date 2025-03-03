@@ -1,6 +1,5 @@
 # CodeHound
-![image](https://github.com/user-attachments/assets/c5823ed8-5ce1-402f-91c2-ab0b527a182d)
-
+![image](https://github.com/user-attachments/assets/e1d82194-0af9-4988-963b-df6fce5585d6)
 
 A React + Vite + TailwindCSS application that helps developers find the right functions or methods for their coding tasks. Simply describe what you want to do, and the app will suggest the most relevant functions.
 
