@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { languages } from "../types/language";
 
 interface SearchFormProps {
   onSearch: (query: string) => void;
@@ -49,84 +50,22 @@ const SearchForm: React.FC<SearchFormProps> = ({
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <motion.button
-          type="button"
-          onClick={() => handleLanguageChange("python")}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            currentLanguage === "python"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Python
-        </motion.button>
-        <motion.button
-          type="button"
-          onClick={() => handleLanguageChange("javascript")}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            currentLanguage === "javascript"
-              ? "bg-yellow-600 text-white"
-              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          JavaScript
-        </motion.button>
-        <motion.button
-          type="button"
-          onClick={() => handleLanguageChange("typescript")}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            currentLanguage === "typescript"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          TypeScript
-        </motion.button>
-        <motion.button
-          type="button"
-          onClick={() => handleLanguageChange("c#")}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            currentLanguage === "c#"
-              ? "bg-purple-600 text-white"
-              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          C#
-        </motion.button>
-        <motion.button
-          type="button"
-          onClick={() => handleLanguageChange("c++")}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            currentLanguage === "c++"
-              ? "bg-blue-800 text-white"
-              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          C++
-        </motion.button>
-        <motion.button
-          type="button"
-          onClick={() => handleLanguageChange("java")}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            currentLanguage === "java"
-              ? "bg-primary text-white"
-              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Java
-        </motion.button>
+        {languages.map((language) => (
+          <motion.button
+            key={language.id}
+            type="button"
+            onClick={() => handleLanguageChange(language.id)}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              currentLanguage === language.id
+                ? `${language.bgColor} ${language.textColor}`
+                : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {language.name}
+          </motion.button>
+        ))}
       </motion.div>
 
       <motion.form
