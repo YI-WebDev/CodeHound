@@ -1,5 +1,6 @@
 # CodeHound
-![image](https://github.com/user-attachments/assets/c5823ed8-5ce1-402f-91c2-ab0b527a182d)
+![image](https://github.com/user-attachments/assets/54290d62-5f47-48fb-b435-ccc857687bd0)
+
 
 
 A React + Vite + TailwindCSS application that helps developers find the right functions or methods for their coding tasks. Simply describe what you want to do, and the app will suggest the most relevant functions.
@@ -29,7 +30,7 @@ A React + Vite + TailwindCSS application that helps developers find the right fu
 - React
 - Vite
 - TailwindCSS
-- OpenRouter API (with Gemini 2.0 Pro which is free!!!)
+- OpenRouter API (with DeepSeek V3 0324)
 
 ## Contributing
 
